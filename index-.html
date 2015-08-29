@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>搜团吧 www.soutuan8.com</title>
+<style type="text/css">
+<!--
+table {
+	font-size: 24pt;
+}
+-->
+</style>
+
+<script type="text/javascript">
+var duration= new Date().getTime();
+var endTime = new Date("6/16/2010").getTime();
+
+function interval(){
+	var n=(endTime-new Date().getTime())/1000;
+	if(n<0) return;
+	
+	var day= n / (24 * 60 * 60);
+	day=Math.floor(day);
+
+	var hour=(n - day * 24 * 60 * 60) / (60 * 60);
+	hour=Math.floor(hour);
+
+	var minute= (n - day * 24 * 60 * 60 - hour * 60 * 60) / 60;
+	minute=Math.floor(minute);
+
+	var second= n - day * 24 * 60 * 60 - hour * 60 * 60 - minute * 60;
+	document.getElementById("timeout").innerHTML =day + '天' + hour + '小时' + minute + '分钟' +  second.toFixed(3);
+	setTimeout(interval, 10);
+}
+
+window.onload=function(){
+	interval();
+}
+</script>
+</head>
+
+<body bgcolor="#F0F0F0">
+<div align="center">
+  <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" >
+    <tr>
+      <td align="center">
+				<font color="#FF0000">搜</font><font color="#F70008">团</font><font color="#EF0010">吧</font><font color="#E70018"> </font><font color="#DF0020">w</font><font color="#D70028">w</font><font color="#CF0030">w</font><font color="#C70038">.</font><font color="#BF0040">s</font><font color="#B70048">o</font><font color="#AF0050">u</font><font color="#A70058">t</font><font color="#9F0060">u</font><font color="#970068">a</font><font color="#8F0070">n</font><font color="#870078">8</font><font color="#7F0080">.</font><font color="#770088">c</font><font color="#6F0090">o</font><font color="#670098">m</font><font color="#5F00A0"> </font><font color="#5700A8">即</font><font color="#4F00B0">将</font><font color="#4700B8">上</font><font color="#3F00C0">线</font><font color="#3700C8">，</font><font color="#2F00D0"> </font><font color="#2700D8">敬</font><font color="#1F00E0">请</font><font color="#1700E8">期</font><font color="#0F00F0">待</font><font color="#0700F8">。</font>
+
+				<br /><br /><br />
+				距离上线还有：<span id="timeout"></span> 秒
+			</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

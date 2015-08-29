@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+#首页
+RewriteRule index.html$ index.php
+
+#分页
+RewriteRule index_([2-9]{0,10}).html index.php?pagenum=$1
+
+#PHP错误提示
+php_flag display_errors on  
